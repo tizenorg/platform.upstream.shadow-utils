@@ -148,12 +148,14 @@ done
 %{_sbindir}/usermod
 %if 0%{?tizen_build_binary_release_type_eng} == 1
 /bin/su
+%exclude /usr/lib/debug
 %{_bindir}/chage
 %{_bindir}/gpasswd
 %{_bindir}/newgrp
 %{_bindir}/passwd
 %else
 %exclude /bin/su
+%exclude /usr/lib/debug
 %exclude %{_bindir}/chage
 %exclude %{_bindir}/gpasswd
 %exclude %{_bindir}/newgrp
