@@ -149,6 +149,8 @@ done
 %if 0%{?tizen_build_binary_release_type_eng} == 1
 /bin/su
 %exclude /usr/lib/debug
+%exclude /bin/login
+%exclude %{_sbindir}/nologin
 %{_bindir}/chage
 %{_bindir}/gpasswd
 %{_bindir}/newgrp
@@ -156,6 +158,8 @@ done
 %else
 %exclude /bin/su
 %exclude /usr/lib/debug
+%exclude /bin/login
+%exclude %{_sbindir}/nologin
 %exclude %{_bindir}/chage
 %exclude %{_bindir}/gpasswd
 %exclude %{_bindir}/newgrp
